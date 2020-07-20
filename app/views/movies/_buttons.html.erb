@@ -1,0 +1,10 @@
+<% pre_like = movie.likes.find { |like| like.user_id == current_user.id} %>
+<% if pre_like %>
+  <%= link_to movie_like_path(movie, pre_like), :method => :delete, remote: true do %>
+    <i class="fas fa-thumbs-down fa-2x"></i>
+  <%end%>
+<% else %>
+  <%= link_to movie_likes_path(movie), :method => :post, remote: true do %>
+    <i class="fas fa-thumbs-up fa-2x"></i>
+  <%end%>
+<% end %>

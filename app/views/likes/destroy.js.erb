@@ -1,0 +1,2 @@
+$("#Movie-<%= @movie.id %>").html("<%= escape_javascript(render partial: 'movies/buttons', locals: { movie: @movie} ) %>");
+$("#Movie-count-<%= @movie.id %>").html("<%= escape_javascript(render partial: 'movies/count', locals: { movie: @movie} ) %>");

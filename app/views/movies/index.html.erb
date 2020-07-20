@@ -1,0 +1,29 @@
+<div id="modal-window" class="modal hide fade" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content"></div>
+  </div>
+</div>
+<h1>Listing all Movies</h1>
+<div class="container">
+  <% @movies.each do |movie| %>
+    <div class="row">
+      <div class="column video-col">
+        <%= embed(movie.url) %>
+      </div>
+      <div class="column details-col">
+        <% if user_signed_in? %>
+          <div id="Movie-<%= movie.id %>" class="buttons">
+            <%= render :partial => "movies/buttons", :locals => { movie: movie} %>
+          </div>
+        <% end %>
+        <p><strong>Title:</strong> <%= truncate(movie.title, length: 70) %></p>
+        <p><strong>Shared by:</strong> <%= shared_by(movie.user_id) %></p>
+        <div id="Movie-count-<%= movie.id %>">
+          <%= render :partial => "movies/count", :locals => { movie: movie} %>
+        </div>
+        <p><strong>Description:</strong> <%= truncate(movie.description, length: 250) %></p>
+      </div>
+    </div>
+  <% end %>
+</div>
+
