@@ -1,25 +1,41 @@
-# README
+# Rails-youtube
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a [Ruby on Rails](https://rubyonrails.org/) based implementation.
 
-Things you may want to cover:
+Here is [The demo on Heroku](https://rails-youtube.herokuapp.com/)
 
-* Ruby version
 
-* System dependencies
+## Built with
 
-* Configuration
+- Ruby 2.6.5
 
-* Database creation
+- Rails '~> 6.0.3', '>= 6.0.3.2'
 
-* Database initialization
+  
 
-* How to run the test suite
+## Quick Start
 
-* Services (job queues, cache servers, search engines, etc.)
+You need to have bundler installed in your system.
 
-* Deployment instructions
+**Step 1:** You can install it by typing:
 
-* ...
-# rails-youtube
+```bash
+$ gem install bundler
+```
+
+
+
+**Step 2:** Install all the related package.
+
+Open of a terminal window in the root of the project **/rails-youtube** and type :
+
+```bash
+$ bundle install
+```
+
+
+**Step 3:** Run the server:
+
+```bash
+$ rails s
+```

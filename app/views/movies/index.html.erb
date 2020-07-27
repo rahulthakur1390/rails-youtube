@@ -24,6 +24,11 @@
         <p><strong>Description:</strong> <%= truncate(movie.description, length: 250) %></p>
       </div>
     </div>
+    <h3>Comments (<%= movie.comments.size %>)</h3>
+    <% if user_signed_in? %>
+      <%= link_to 'Add a Comment', new_movie_comment_path(movie),  {:remote => true, 'data-toggle' =>  "modal", 'data-target' => '#modal-window', class: 'btn btn-outline-primary my-2 my-sm-0'}  %>
+    <% end %>
+    <%= render partial: 'comment', collection: movie.comments.reverse %>
   <% end %>
 </div>
 
